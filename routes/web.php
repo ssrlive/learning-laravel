@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -50,6 +51,25 @@ Route::get('/', function () {
     // dd($user);
 
     // $user = DB::table('users')->where('id', 4)->delete();
+    // dd($user);
+
+    // // Eloquent ORM
+    // $users = User::where('id', 5)->first();
+    // dd($users);
+    //
+    // $user = User::create([
+    //     'name' => 'Mike Hill',
+    //     'email' => 'mikehell@gmail.com',
+    //     'password' => 'password',
+    // ]);
+    // dd($user);
+    //
+    // $user = User::where('id', 5)->update([
+    //     'name' => 'Mike Jackson',
+    // ]);
+    // dd($user);
+    //
+    // $user = User::where('id', 6)->delete();
     // dd($user);
 });
 
