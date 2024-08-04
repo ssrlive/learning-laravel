@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
@@ -23,7 +23,18 @@
             <div class="items-center justify-center mt-4">
                 @foreach ($listItems as $listItem)
                     <div class="flex" style="align-items: center;">
-                        <p class="text-lg">Item {{ $listItem->id }}: {{ $listItem->name }}</p>
+                        <p class="text-lg"
+                            style="{{ $listItem->is_completed ? 'text-decoration: line-through;' : '' }}">
+                            Item {{ $listItem->id }}: {{ $listItem->name }}</p>
+                        @if (!$listItem->is_completed)
+                            <form method="POST" action="{{ route('markComplete', $listItem->id) }}"
+                                accept-charset="UTF-8">
+                                {{ csrf_field() }}
+                                <button type="submit" class="border border-black rounded"
+                                    style="max-height: 25px; margin-left: 20px;">Mark
+                                    Complete</button>
+                            </form>
+                        @endif
                     </div>
                 @endforeach
             </div>
@@ -33,7 +44,7 @@
                 {{ csrf_field() }}
                 <label for="listItem">New Todo Item</label></br>
                 <input type="text" id="listItem" name="listItem"></br>
-                <button type="submit">Save Item</button>
+                <button type="submit" class="border border-black rounded">Save Item</button>
             </form>
         </div>
     </div>

@@ -10,7 +10,17 @@ class TodoListController extends Controller
 {
     public function index()
     {
+        // return view('welcome', ['listItems' => ListItem::where('is_completed', 0)->get()]);
         return view('welcome', ['listItems' => ListItem::all()]);
+    }
+
+    public function markComplete($id)
+    {
+        $item = ListItem::find($id);
+        $item->is_completed = 1;
+        $item->save();
+
+        return redirect('/');
     }
 
     public function saveItem(Request $request)
