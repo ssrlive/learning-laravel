@@ -88,3 +88,14 @@ If you want to rollback all the migrations
 ```bash
 php artisan migrate:reset
 ```
+
+### 6. create ListItem model
+```bash
+php artisan make:model ListItem -m
+```
+This command will create a model file in the `app/Models` folder and a migration file in the `database/migrations` folder.
+We can edit the migration file to add columns to the `list_items` table.
+Then run the migration
+```bash
+php artisan migrate
+```

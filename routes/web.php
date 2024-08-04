@@ -73,6 +73,10 @@ Route::get('/', function () {
     // dd($user);
 });
 
+Route::post('/saveItem', function () {
+    return view('welcome');
+})->name('saveItem');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -15,6 +15,18 @@
 </head>
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+    <div
+        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <div>
+            <h1>Todo list</h1>
+            <form method="POST" action="{{ route('saveItem') }}" accept-charset="UTF-8">
+                {{ csrf_field() }}
+                <label for="listItem">New Todo Item</label></br>
+                <input type="text" id="listItem" name="listItem"></br>
+                <button type="submit">Save Item</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
