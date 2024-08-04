@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\TodoListController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -73,9 +74,7 @@ Route::get('/', function () {
     // dd($user);
 });
 
-Route::post('/saveItem', function () {
-    return view('welcome');
-})->name('saveItem');
+Route::post('/saveItemRoute', [TodoListController::class, 'saveItem'])->name('saveItem');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

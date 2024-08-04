@@ -99,3 +99,9 @@ Then run the migration
 ```bash
 php artisan migrate
 ```
+
+### 7. create a controller
+```bash
+php artisan make:controller TodoListController
+```
+Now we can store our data to the database from the controller.
