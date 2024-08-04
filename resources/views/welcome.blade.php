@@ -19,6 +19,16 @@
         class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
         <div>
             <h1>Todo list</h1>
+
+            <div class="items-center justify-center mt-4">
+                @foreach ($listItems as $listItem)
+                    <div class="flex" style="align-items: center;">
+                        <p class="text-lg">Item {{ $listItem->id }}: {{ $listItem->name }}</p>
+                    </div>
+                @endforeach
+            </div>
+
+            </br>
             <form method="POST" action="{{ route('saveItem') }}" accept-charset="UTF-8">
                 {{ csrf_field() }}
                 <label for="listItem">New Todo Item</label></br>

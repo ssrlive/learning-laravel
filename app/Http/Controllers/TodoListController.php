@@ -8,6 +8,11 @@ use App\Models\ListItem;
 
 class TodoListController extends Controller
 {
+    public function index()
+    {
+        return view('welcome', ['listItems' => ListItem::all()]);
+    }
+
     public function saveItem(Request $request)
     {
         // Log::info(json_encode($request->all()));
@@ -17,6 +22,7 @@ class TodoListController extends Controller
         $newItem->is_completed = 0;
         $newItem->save();
 
-        return view('welcome');
+        // return view('welcome', ['listItems' => ListItem::all()]);
+        return redirect('/');
     }
 }
