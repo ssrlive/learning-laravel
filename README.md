@@ -88,3 +88,13 @@ If you want to rollback all the migrations
 ```bash
 php artisan migrate:reset
 ```
+
+### 6. add avatar to the users table
+```bash
+php artisan make:migration update_users_table_add_avatar_field --table=users
+```
+After editing the migration file in the `database/migrations` folder, run the migration
+```bash
+php artisan migrate
+```
+to add the `avatar` field to the `users` table.
