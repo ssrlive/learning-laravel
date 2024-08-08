@@ -98,3 +98,12 @@ After editing the migration file in the `database/migrations` folder, run the mi
 php artisan migrate
 ```
 to add the `avatar` field to the `users` table.
+
+### 7. add a `AvatarController` to handle the avatar upload
+```bash
+php artisan make:controller Profile/AvatarController
+```
+Edit the `AvatarController` in the `app/Http/Controllers/Profile` folder,
+and add function `update` to handle the avatar upload.
+
+Create file `resources/views/profile/partials/user-avatar-form.blade.php` to display the form to upload the avatar.
