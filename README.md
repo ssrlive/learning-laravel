@@ -107,3 +107,15 @@ Edit the `AvatarController` in the `app/Http/Controllers/Profile` folder,
 and add function `update` to handle the avatar upload.
 
 Create file `resources/views/profile/partials/user-avatar-form.blade.php` to display the form to upload the avatar.
+
+### 8. create a Request class to validate the avatar upload
+```bash
+php artisan make:request UpdateAvatarRequest
+```
+Edit the `UpdateAvatarRequest` in the `app/Http/Requests` folder,
+and add the rules to validate the avatar upload.
+
+make `storage/app/public` folder accessible
+```bash
+php artisan storage:link
+```
