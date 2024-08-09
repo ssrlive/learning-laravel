@@ -119,3 +119,8 @@ make `storage/app/public` folder accessible
 ```bash
 php artisan storage:link
 ```
+
+### 9. update dependencies
+```bash
+composer update
+```
